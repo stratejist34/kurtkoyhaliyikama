@@ -117,7 +117,7 @@ export const StickySceneEntry = () => {
                     <MessageCircle size={20} className="shrink-0" />
                     <div className="flex flex-col items-start leading-none">
                         <span className="font-bold text-sm">Fotoğraf Gönder</span>
-                        <span className="text-[10px] text-white/75 font-normal">Bugün planına dahil ol</span>
+                        <span className="text-[10px] text-white font-normal">Bugün planına dahil ol</span>
                     </div>
                 </a>
             </div>

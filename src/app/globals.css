@@ -2,7 +2,7 @@
 
 @theme {
   --color-brand-navy: #1E2D24;
-  --color-brand-coral: #D4564A;
+  --color-brand-coral: #C0392B;
   --color-brand-sky: #0D7377;
   --color-brand-mist: #F7F2E9;
   --color-brand-slate: #16241D;
@@ -21,7 +21,7 @@
   --background: #ffffff;
   --foreground: #1E2D24;
   --brand-navy: #1E2D24;
-  --brand-coral: #D4564A;
+  --brand-coral: #C0392B;
   --brand-sky: #0D7377;
   --brand-mist: #F7F2E9;
 }

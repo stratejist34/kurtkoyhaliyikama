@@ -85,10 +85,11 @@ export const CinematicServices = () => {
                                         src={service.image}
                                         alt={service.category}
                                         fill
-                                        sizes="(min-width: 1280px) 90vw, 100vw"
+                                        sizes="(min-width: 1280px) 1200px, 95vw"
                                         placeholder="blur"
                                         blurDataURL={BLUR_FOREST}
                                         className="w-full h-full object-cover"
+                                        quality={70}
                                     />
                                 </div>
 
