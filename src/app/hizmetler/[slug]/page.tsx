@@ -27,7 +27,7 @@ export default function ServiceDetailPage() {
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="flex-1 text-left">
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-tight">{service.title}</h1>
-                            <p className="text-brand-sky text-xl mb-8 opacity-90 max-w-2xl">{service.shortDescription}</p>
+                            <p className="text-brand-sand text-xl mb-8 opacity-90 max-w-2xl">{service.shortDescription}</p>
                             <SlotMessage variant="dark" className="mb-4" />
                             <div className="flex flex-wrap gap-4">
                                 <a
@@ -45,7 +45,7 @@ export default function ServiceDetailPage() {
                                     onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'hizmet_detay' })}
                                     className="bg-white/10 text-white font-bold px-8 py-4 rounded-sm flex items-center gap-2 hover:bg-white/20 transition-all border border-white/20 uppercase tracking-wide"
                                 >
-                                    <MessageCircle className="w-5 h-5 text-brand-sky" />
+                                    <MessageCircle className="w-5 h-5 text-brand-sand" />
                                     WHATSAPP&apos;TAN FİYAT ALIN
                                 </a>
                             </div>

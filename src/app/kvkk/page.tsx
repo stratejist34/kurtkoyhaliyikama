@@ -10,7 +10,7 @@ export default function KVKKPage() {
         <main className="min-h-screen bg-white">
             <section className="relative pt-28 page-hero-bg page-hero-cut overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-                    <p className="text-brand-sky text-xs uppercase tracking-[0.25em] font-bold mb-4">Yasal</p>
+                    <p className="text-brand-sand text-xs uppercase tracking-[0.25em] font-bold mb-4">Yasal</p>
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">KVKK Aydınlatma Metni</h1>
                 </div>
             </section>

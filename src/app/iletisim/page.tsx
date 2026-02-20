@@ -44,7 +44,7 @@ export default function IletisimPage() {
             <section className="relative pt-32 pb-20 page-hero-bg page-hero-cut overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/images/microscopic_bacteria_bg.png')] opacity-10 mix-blend-overlay" />
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-                    <p className="text-brand-sky text-xs uppercase tracking-[0.25em] font-bold mb-4">İletişim</p>
+                    <p className="text-brand-sand text-xs uppercase tracking-[0.25em] font-bold mb-4">İletişim</p>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
                         Bir adım uzağınızdayız.
                     </h1>

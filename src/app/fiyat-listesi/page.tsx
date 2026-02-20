@@ -36,7 +36,7 @@ export default function FiyatListesiPage() {
             {/* Hero */}
             <section className="relative pt-28 page-hero-bg page-hero-cut overflow-hidden">
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-                    <p className="text-brand-sky text-sm uppercase tracking-widest font-semibold mb-4">Güncel Fiyat Listesi</p>
+                    <p className="text-brand-sand text-sm uppercase tracking-widest font-semibold mb-4">Güncel Fiyat Listesi</p>
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                         Halı Yıkama Fiyatları
                     </h1>

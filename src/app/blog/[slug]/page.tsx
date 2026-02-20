@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         <ArrowLeft size={16} />
                         Blog
                     </Link>
-                    <span className="inline-block bg-brand-sky/15 text-brand-sky text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+                    <span className="inline-block bg-brand-sand/15 text-brand-sand text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
                         {post.categoryLabel}
                     </span>
                     <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">

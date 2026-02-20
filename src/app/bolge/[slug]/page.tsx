@@ -222,7 +222,7 @@ export default async function BolgeServicePage({ params }: { params: Promise<{ s
                                     <ul className="grid grid-cols-2 gap-2">
                                         {serviceData.features.map((feature) => (
                                             <li key={feature} className="flex items-center gap-2 text-xs text-white/70">
-                                                <CheckCircle2 className="w-3.5 h-3.5 text-brand-sky shrink-0" />
+                                                <CheckCircle2 className="w-3.5 h-3.5 text-brand-sand shrink-0" />
                                                 {feature}
                                             </li>
                                         ))}

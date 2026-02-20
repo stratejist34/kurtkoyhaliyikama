@@ -10,7 +10,7 @@ export default function KurumsalPage() {
                 <div className="absolute inset-0 bg-[url('/images/microscopic_bacteria_bg.png')] opacity-10 mix-blend-overlay"></div>
                 <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Kurumsal</h1>
-                    <p className="text-brand-sky text-lg uppercase tracking-widest font-medium">Sadece Temizlik Değil, Bir Sağlık Kararı</p>
+                    <p className="text-brand-sand text-lg uppercase tracking-widest font-medium">Sadece Temizlik Değil, Bir Sağlık Kararı</p>
                 </div>
             </section>
 

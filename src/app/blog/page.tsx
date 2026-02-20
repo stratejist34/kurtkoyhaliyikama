@@ -19,7 +19,7 @@ export default function BlogPage() {
             {/* Hero */}
             <section className="relative pt-28 page-hero-bg page-hero-cut overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-                    <p className="text-brand-sky text-sm uppercase tracking-widest font-semibold mb-4">Bilgi &amp; Rehber</p>
+                    <p className="text-brand-sand text-sm uppercase tracking-widest font-semibold mb-4">Bilgi &amp; Rehber</p>
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blog</h1>
                     <p className="text-white/60 text-lg max-w-xl mx-auto">
                         Hizmet bölgelerimiz ve sunduğumuz hizmetler hakkında detaylı bilgiler.

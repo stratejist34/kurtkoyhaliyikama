@@ -424,13 +424,15 @@ body::before {
   background:
     repeating-linear-gradient(-45deg,
       transparent,
-      transparent 20px,
-      rgba(255, 255, 255, 0.018) 20px,
-      rgba(255, 255, 255, 0.018) 21px),
-    linear-gradient(158deg,
-      #4B6455 0%,
-      #6F8878 46%,
-      #F4ECDF 100%);
+      transparent 18px,
+      rgba(255, 255, 255, 0.03) 18px,
+      rgba(255, 255, 255, 0.03) 19px),
+    linear-gradient(160deg,
+      #1A2A3A 0%,
+      #1E3D3B 30%,
+      #2D5E56 55%,
+      #A8BBA0 82%,
+      #E8DFD0 100%);
 }
 
 /* Angled bottom cut — adds visual break before next section */

@@ -20,7 +20,7 @@ export default function HizmetlerPage() {
             <section className="relative pt-28 page-hero-bg page-hero-cut overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Hizmetlerimiz</h1>
-                    <p className="text-brand-sky text-lg uppercase tracking-widest font-medium">Her biri ayrı uzmanlık.</p>
+                    <p className="text-brand-sand text-lg uppercase tracking-widest font-medium">Her biri ayrı uzmanlık.</p>
                 </div>
             </section>
 
