@@ -65,8 +65,8 @@ export const Hero = () => {
                 style={{
                     borderRadius: '24px',
                     background: 'rgba(247, 250, 249, 0.50)',
-                    backdropFilter: 'blur(20px) saturate(1.4)',
-                    WebkitBackdropFilter: 'blur(20px) saturate(1.4)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
                     border: '1px solid rgba(255, 255, 255, 0.45)',
                     boxShadow: '0 10px 40px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6)',
                 }}
@@ -116,7 +116,7 @@ export const Hero = () => {
                     rel="noopener noreferrer"
                     data-sticky-conflict
                     onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'hero' })}
-                    className="hero-stagger hero-stagger-3 inline-flex items-center gap-3 bg-brand-coral text-white font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98] cta-breathe"
+                    className="hero-stagger hero-stagger-3 inline-flex items-center gap-3 bg-brand-coral text-white font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98]"
                     style={{
                         padding: '14px 28px',
                         borderRadius: '16px',
