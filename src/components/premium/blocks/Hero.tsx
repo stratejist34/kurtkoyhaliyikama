@@ -40,7 +40,7 @@ export const Hero = () => {
                     alt="Kurtköy Halı Yıkama - profesyonel yıkama sonrası tertemiz halı"
                     fill
                     priority
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover ken-burns"
                     style={{ filter: 'blur(6px) saturate(88%) brightness(82%)', transform: 'scale(1.05)' }}
                     fetchPriority="high"
@@ -115,9 +115,9 @@ export const Hero = () => {
                     rel="noopener noreferrer"
                     data-sticky-conflict
                     onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'hero' })}
-                    className="hero-stagger hero-stagger-3 inline-flex items-center gap-3 text-white font-semibold transition-all duration-300 hover:brightness-95 active:scale-[0.98]"
+                    className="hero-stagger hero-stagger-3 inline-flex items-center gap-3 text-white font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98]"
                     style={{
-                        background: '#E26B5D',
+                        background: '#D94E3F', // Darker coral for better contrast (WCAG AA)
                         padding: '14px 28px',
                         borderRadius: '16px',
                         boxShadow: '0 12px 30px rgba(226,107,93,0.3)',

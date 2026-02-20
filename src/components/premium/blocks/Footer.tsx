@@ -28,11 +28,11 @@ export const Footer = () => {
                         Kurtköy’de hijyen konusunda taviz vermeyen birkaç firmadan biriyiz.
                     </p>
                     <div className="flex items-center gap-4">
-                        <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-brand-coral transition-colors">
-                            <Instagram size={18} />
+                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-brand-coral transition-colors" aria-label="Instagram sayfamız">
+                            <Instagram size={20} />
                         </a>
-                        <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-brand-coral transition-colors">
-                            <Facebook size={18} />
+                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-brand-coral transition-colors" aria-label="Facebook sayfamız">
+                            <Facebook size={20} />
                         </a>
                     </div>
                 </div>
@@ -40,11 +40,11 @@ export const Footer = () => {
                 {/* Services Column */}
                 <div>
                     <h3 className="font-bold mb-6 uppercase tracking-widest text-xs text-white">Hizmetlerimiz</h3>
-                    <ul className="space-y-4 text-sm text-white/50">
-                        <li><Link href="/hizmetler/hali-yikama" className="hover:text-white transition-colors">Halı Yıkama</Link></li>
-                        <li><Link href="/hizmetler/koltuk-yikama" className="hover:text-white transition-colors">Koltuk Yıkama</Link></li>
-                        <li><Link href="/hizmetler/stor-perde-yikama" className="hover:text-white transition-colors">Stor Perde Yıkama</Link></li>
-                        <li><Link href="/hizmetler/yorgan-battaniye-yikama" className="hover:text-white transition-colors">Yorgan & Battaniye Yıkama</Link></li>
+                    <ul className="space-y-4 text-sm text-white/70">
+                        <li><Link href="/hizmetler/hali-yikama" className="py-2 hover:text-white transition-colors block">Halı Yıkama</Link></li>
+                        <li><Link href="/hizmetler/koltuk-yikama" className="py-2 hover:text-white transition-colors block">Koltuk Yıkama</Link></li>
+                        <li><Link href="/hizmetler/stor-perde-yikama" className="py-2 hover:text-white transition-colors block">Stor Perde Yıkama</Link></li>
+                        <li><Link href="/hizmetler/yorgan-battaniye-yikama" className="py-2 hover:text-white transition-colors block">Yorgan & Battaniye Yıkama</Link></li>
                     </ul>
                 </div>
 
@@ -104,11 +104,11 @@ export const Footer = () => {
                         © 2026 Kurtköy Profesyonel Halı Yıkama - Tüm Hakları Saklıdır.
                     </p>
                 </div>
-                <div className="flex gap-6 text-[10px] text-white/20 uppercase tracking-widest">
-                    <Link href="/fiyat-listesi" className="hover:text-white transition-colors">Fiyat Listesi</Link>
-                    <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-                    <Link href="/gizlilik" className="hover:text-white transition-colors">Gizlilik Politikası</Link>
-                    <Link href="/kvkk" className="hover:text-white transition-colors">KVKK</Link>
+                <div className="flex gap-6 text-[11px] text-white/40 uppercase tracking-widest">
+                    <Link href="/fiyat-listesi" className="py-2 hover:text-white transition-colors">Fiyat Listesi</Link>
+                    <Link href="/blog" className="py-2 hover:text-white transition-colors">Blog</Link>
+                    <Link href="/gizlilik" className="py-2 hover:text-white transition-colors">Gizlilik Politikası</Link>
+                    <Link href="/kvkk" className="py-2 hover:text-white transition-colors">KVKK</Link>
                 </div>
             </div>
 
@@ -118,7 +118,7 @@ export const Footer = () => {
                     href="https://wa.me/905426084887?text=Merhaba%2C%20kurtkoyhaliyikama.net%20sitesini%20inceledim%20ve%20benzer%20bir%20premium%20dijital%20yap%C4%B1%20kurmak%20istiyorum."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] text-white/20 uppercase tracking-widest hover:text-white/60 transition-colors"
+                    className="text-[11px] text-white/40 uppercase tracking-widest hover:text-white/80 transition-colors py-2"
                 >
                     Dijital Mimari & Strateji: Emrah Gümüşsoy
                 </a>

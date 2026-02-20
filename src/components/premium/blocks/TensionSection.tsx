@@ -43,7 +43,7 @@ export const TensionSection = () => {
                                     src="/images/bacteria_microscopic_v3.png"
                                     alt="Halı liflerindeki patojenler"
                                     fill
-                                    sizes="(min-width: 1024px) 320px, 80vw"
+                                    sizes="(min-width: 1024px) 320px, 200px"
                                     className="w-full h-full object-cover opacity-60 mix-blend-luminosity scale-110"
                                 />
                                 <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_40%,rgba(26,42,108,0.8)_90%)]" />
