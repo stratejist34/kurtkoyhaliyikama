@@ -103,9 +103,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-      </head>
       <body
         className={`${jakarta.variable} ${manrope.variable} antialiased`}
       >

@@ -44,7 +44,7 @@ export const Hero = () => {
                     className="object-cover ken-burns"
                     style={{ filter: 'blur(6px) saturate(88%) brightness(82%)', transform: 'scale(1.05)' }}
                     fetchPriority="high"
-                    quality={65}
+                    quality={40}
                 />
                 <div
                     className="absolute inset-0 z-10"
