@@ -37,7 +37,7 @@ export const TensionSection = () => {
 
                 <Reveal direction="scale" delay={200} className="lg:w-[35%] relative flex justify-center lg:justify-end">
                     <Parallax speed={0.15}>
-                        <div className="w-full max-w-sm aspect-square rounded-full bg-brand-navy overflow-hidden border-4 border-white/20 shadow-2xl flex items-center justify-center relative group">
+                        <div className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-[28px] bg-brand-navy overflow-hidden border-4 border-white/20 shadow-2xl flex items-center justify-center relative group">
                             <div className="absolute inset-0 z-0">
                                 <Image
                                     src="/images/bacteria_microscopic_v3.png"
@@ -52,12 +52,12 @@ export const TensionSection = () => {
                             <div className="relative z-10 text-center p-6">
                                 <p className="text-white/55 text-xs font-bold uppercase tracking-widest mb-2">Temiz görünen halıda</p>
                                 <div className="text-2xl md:text-3xl font-black text-white tracking-tight">1M+ bakteri</div>
-                                <p className="text-brand-sky text-[10px] font-semibold mt-1 uppercase tracking-widest">m² başına</p>
+                                <p className="text-brand-sand text-[10px] font-semibold mt-1 uppercase tracking-widest">m² başına</p>
                             </div>
                         </div>
                     </Parallax>
 
-                    <Reveal direction="up" delay={500} className="absolute -bottom-6 -left-4 z-20">
+                    <Reveal direction="up" delay={500} className="absolute -bottom-4 -left-6 z-20">
                         <div className="bg-white rounded-[20px] shadow-[0_4px_16px_rgba(0,0,0,0.06),0_1px_4px_rgba(0,0,0,0.04)] px-4 py-3 border border-brand-navy/8">
                             <p className="text-brand-navy font-black text-sm">Kökten temizlik.</p>
                             <p className="text-brand-navy/50 text-[11px] mt-0.5 font-medium">Yüzey değil, lif dibi.</p>

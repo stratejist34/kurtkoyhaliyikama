@@ -101,7 +101,7 @@ export const CinematicServices = () => {
                                         className={`transform transition-transform duration-700 ease-out ${service.theme === 'dramatic' ? 'group-hover:-translate-y-2' : 'group-hover:-translate-y-1'
                                             }`}
                                     >
-                                        <span className="inline-block mb-3 text-xs font-bold tracking-[0.2em] text-brand-sky">
+                                        <span className="inline-block mb-3 text-xs font-bold tracking-[0.2em] text-brand-sand drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                                             {service.category}
                                         </span>
 
@@ -110,7 +110,7 @@ export const CinematicServices = () => {
                                                 <>
                                                     {service.headline}
                                                     <br />
-                                                    <span className="text-brand-sky text-xl md:text-3xl font-medium italic mt-1 block">
+                                                    <span className="text-brand-sand text-xl md:text-3xl font-medium italic mt-1 block drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                                                         {service.headlineAccent}
                                                     </span>
                                                 </>

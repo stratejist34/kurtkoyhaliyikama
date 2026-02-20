@@ -310,6 +310,25 @@ body::before {
   will-change: transform;
 }
 
+/* CTA breathing glow */
+@keyframes ctaBreathe {
+
+  0%,
+  100% {
+    box-shadow: 0 12px 30px rgba(192, 57, 43, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 14px 40px rgba(192, 57, 43, 0.5);
+  }
+}
+
+.cta-breathe {
+  animation:
+    heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    ctaBreathe 3s 1.5s ease-in-out infinite;
+}
+
 /* Marquee band */
 @keyframes marqueeScroll {
   from {

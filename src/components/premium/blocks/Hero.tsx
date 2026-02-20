@@ -32,7 +32,7 @@ export const Hero = () => {
     }, []);
 
     return (
-        <section className="relative min-h-[85vh] max-h-[800px] flex items-center px-4 md:px-8 pt-20 pb-16 overflow-hidden">
+        <section className="relative min-h-[85vh] max-h-[800px] flex items-center px-4 md:px-8 pt-32 md:pt-20 pb-16 overflow-hidden">
             {/* Background image + overlay */}
             <div ref={bgRef} className="absolute inset-0 z-0" style={{ willChange: 'transform' }}>
                 <Image
@@ -42,7 +42,7 @@ export const Hero = () => {
                     priority
                     sizes="100vw"
                     className="object-cover ken-burns"
-                    style={{ filter: 'blur(6px) saturate(88%) brightness(82%)', transform: 'scale(1.05)' }}
+                    style={{ filter: 'blur(2px) saturate(1.1) brightness(75%)', transform: 'scale(1.05)' }}
                     fetchPriority="high"
                     quality={40}
                 />
@@ -64,11 +64,11 @@ export const Hero = () => {
                 className="hero-stagger hero-stagger-1 relative z-30 ml-0 md:ml-[8%] lg:ml-[12%] max-w-[620px] p-8 md:p-10"
                 style={{
                     borderRadius: '24px',
-                    background: 'rgba(255, 255, 255, 0.72)',
-                    backdropFilter: 'blur(14px)',
-                    WebkitBackdropFilter: 'blur(14px)',
-                    border: '1px solid rgba(255, 255, 255, 0.6)',
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8)',
+                    background: 'rgba(247, 250, 249, 0.50)',
+                    backdropFilter: 'blur(20px) saturate(1.4)',
+                    WebkitBackdropFilter: 'blur(20px) saturate(1.4)',
+                    border: '1px solid rgba(255, 255, 255, 0.45)',
+                    boxShadow: '0 10px 40px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6)',
                 }}
             >
                 {/* Mini trust tag */}
@@ -116,7 +116,7 @@ export const Hero = () => {
                     rel="noopener noreferrer"
                     data-sticky-conflict
                     onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'hero' })}
-                    className="hero-stagger hero-stagger-3 inline-flex items-center gap-3 bg-brand-coral text-white font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98]"
+                    className="hero-stagger hero-stagger-3 inline-flex items-center gap-3 bg-brand-coral text-white font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98] cta-breathe"
                     style={{
                         padding: '14px 28px',
                         borderRadius: '16px',
