@@ -1,0 +1,437 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #1E2D24;
+  --color-brand-coral: #D4564A;
+  --color-brand-sky: #0D7377;
+  --color-brand-mist: #F7F2E9;
+  --color-brand-slate: #16241D;
+  --color-brand-sand: #E2D4BD;
+  --color-brand-sand-light: #FCF7EF;
+  --color-brand-pine: #467458;
+  --color-brand-rock: #A87345;
+  --color-brand-rock-light: #C69762;
+
+  --font-sans: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+  --font-fraunces: 'Manrope', Arial, Helvetica, sans-serif;
+  --font-mono: monospace;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1E2D24;
+  --brand-navy: #1E2D24;
+  --brand-coral: #D4564A;
+  --brand-sky: #0D7377;
+  --brand-mist: #F7F2E9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #071E2E;
+    --foreground: #F8FAFC;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jakarta), 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+.hero-overlay-blend {
+  background: linear-gradient(180deg,
+      rgba(14, 95, 106, 0.22) 0%,
+      rgba(63, 179, 198, 0.15) 50%,
+      rgba(255, 255, 255, 0.95) 100%);
+}
+
+.hero-fade-bottom {
+  background: linear-gradient(to bottom,
+      rgba(247, 242, 233, 0) 0%,
+      rgba(247, 242, 233, 0.25) 85%,
+      rgba(247, 242, 233, 0.6) 100%);
+}
+
+.service-card-gradient {
+  background: linear-gradient(145deg,
+      rgba(23, 148, 167, 0.16) 0%,
+      rgba(70, 116, 88, 0.1) 44%,
+      rgba(255, 255, 255, 0.96) 100%);
+}
+
+.service-image-overlay {
+  background: linear-gradient(180deg,
+      rgba(15, 45, 51, 0.14) 0%,
+      rgba(15, 45, 51, 0.58) 100%);
+}
+
+.cinematic-overlay-blend {
+  background: linear-gradient(96deg,
+      rgba(20, 43, 37, 0.88) 0%,
+      rgba(20, 78, 90, 0.7) 44%,
+      rgba(45, 95, 66, 0.55) 100%);
+}
+
+.marquee-shell {
+  background: linear-gradient(90deg,
+      rgba(18, 38, 33, 0.96) 0%,
+      rgba(19, 82, 95, 0.92) 48%,
+      rgba(46, 96, 67, 0.94) 100%);
+}
+
+/* Tarantino UX Utilities */
+.scene-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateX(-10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================
+   Scroll Reveal System
+   ========================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1.08) translate(-1%, -0.5%);
+  }
+
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.reveal.revealed,
+.reveal-up.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-scale.revealed {
+  animation-fill-mode: forwards;
+}
+
+.reveal.revealed {
+  animation: fadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-up.revealed {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-left.revealed {
+  animation: slideFromLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-right.revealed {
+  animation: slideFromRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-scale.revealed {
+  animation: scaleIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.stagger-children>* {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stagger-children.revealed>* {
+  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--stagger-index, 0) * 100ms);
+}
+
+/* Hero entrance */
+.hero-stagger {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-stagger-1 {
+  animation-delay: 0ms;
+}
+
+.hero-stagger-2 {
+  animation-delay: 150ms;
+}
+
+.hero-stagger-3 {
+  animation-delay: 300ms;
+}
+
+.hero-stagger-4 {
+  animation-delay: 500ms;
+}
+
+/* Ken Burns for hero background */
+.ken-burns {
+  animation: kenBurns 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Marquee band */
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marqueeScroll 28s linear infinite;
+  will-change: transform;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ==========================================
+   Section Transitions & Decorative
+   ========================================== */
+
+.section-fade-top-navy {
+  background: linear-gradient(to bottom, var(--color-brand-navy) 0%, transparent 100%);
+  height: 80px;
+  pointer-events: none;
+}
+
+.section-fade-top-white {
+  background: linear-gradient(to bottom, white 0%, transparent 100%);
+  height: 80px;
+  pointer-events: none;
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* ==========================================
+   Page Hero — Inner Pages
+   ========================================== */
+
+/* Diagonal stripe texture + directional gradient */
+.page-hero-bg {
+  background:
+    repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.018) 20px,
+      rgba(255, 255, 255, 0.018) 21px),
+    linear-gradient(158deg,
+      #4B6455 0%,
+      #6F8878 46%,
+      #F4ECDF 100%);
+}
+
+/* Angled bottom cut — adds visual break before next section */
+.page-hero-cut {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 56px), 0 100%);
+  padding-bottom: calc(5rem + 56px) !important;
+}
+
+/* ==========================================
+   Existing Utilities
+   ========================================== */
+
+.text-gradient-premium {
+  background: linear-gradient(135deg, #3EBDAD 0%, #5ED4C6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premium-card {
+  border: 1px solid rgba(27, 58, 45, 0.1);
+  background: rgba(27, 58, 45, 0.03);
+  backdrop-filter: blur(10px);
+}
