@@ -24,7 +24,7 @@ export const Footer = () => {
                         Halı yıkamayı bir temizlik değil, bir sağlık kararı olarak görüyoruz.
                         Cerrahi titizlik ve teknik hassasiyetle evinize hijyen getiriyoruz.
                     </p>
-                    <p className="text-brand-sky/80 font-medium text-sm border-l-2 border-brand-coral pl-3">
+                    <p className="text-brand-sand font-medium text-sm border-l-2 border-brand-coral pl-3">
                         Kurtköy’de hijyen konusunda taviz vermeyen birkaç firmadan biriyiz.
                     </p>
                     <div className="flex items-center gap-4">
