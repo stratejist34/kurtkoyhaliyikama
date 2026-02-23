@@ -9,9 +9,6 @@ import { ArrowRight, CheckCircle2, MessageCircle, Phone, MapPin } from 'lucide-r
 import { trackEvent } from '@/lib/analytics';
 import { FaqSection } from '@/components/premium/blocks/FaqSection';
 
-const WHATSAPP_URL =
-    'https://wa.me/905424025123?text=Merhaba%2C%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.';
-
 export default function HizmetlerContent({ services, regions }: { services: Service[], regions: Region[] }) {
     return (
         <main className="min-h-screen bg-white">
@@ -69,7 +66,7 @@ export default function HizmetlerContent({ services, regions }: { services: Serv
                                         <ArrowRight className="w-5 h-5" />
                                     </Link>
                                     <a
-                                        href={`https://wa.me/905424025123?text=Merhaba%2C%20${encodeURIComponent(service.title)}%20hakk%C4%B1nda%20plan%20almak%20istiyorum.`}
+                                        href={`https://wa.me/905424025123?text=${encodeURIComponent(service.whatsappMessage)}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'hizmetler' })}
@@ -132,7 +129,7 @@ export default function HizmetlerContent({ services, regions }: { services: Serv
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href={WHATSAPP_URL}
+                            href="https://wa.me/905424025123?text=Merhaba%2C%20hizmetleriniz%20hakk%C4%B1nda%20fiyat%20ve%20randevu%20bilgisi%20alabilir%20miyim%3F"
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'hizmetler' })}

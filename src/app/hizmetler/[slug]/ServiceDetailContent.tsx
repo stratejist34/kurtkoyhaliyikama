@@ -6,8 +6,6 @@ import { CheckCircle2, Phone, MessageCircle } from 'lucide-react';
 import { SlotMessage } from '@/components/premium/ui/SlotMessage';
 import { trackEvent } from '@/lib/analytics';
 
-const WHATSAPP_URL = 'https://wa.me/905424025123?text=Merhaba%2C%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.';
-
 export default function ServiceDetailContent({ service }: { service: Service }) {
     return (
         <main className="min-h-screen bg-white">
@@ -30,7 +28,7 @@ export default function ServiceDetailContent({ service }: { service: Service }) 
                                     HEMEN ARAYIN
                                 </a>
                                 <a
-                                    href={WHATSAPP_URL}
+                                    href={`https://wa.me/905424025123?text=${encodeURIComponent(service.whatsappMessage)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'hizmet_detay' })}

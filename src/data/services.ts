@@ -12,6 +12,7 @@ export interface Service {
         title: string;
         description: string;
     }[];
+    whatsappMessage: string;
 }
 
 export const services: Service[] = [
@@ -55,7 +56,8 @@ export const services: Service[] = [
                 title: 'Paketleme & Teslim',
                 description: 'Hijyenik şekilde paketlenen halılarınız ücretsiz servisimizle adresinize teslim edilir.'
             }
-        ]
+        ],
+        whatsappMessage: 'Merhaba, halılarım için fiyat ve en yakın alım günü bilgisini alabilir miyim?'
     },
     {
         id: 'koltuk-yikama',
@@ -93,7 +95,8 @@ export const services: Service[] = [
                 title: 'Kuruma',
                 description: 'İşlem sonrası koltuklarınız yaklaşık 4 saat içinde kuruyarak kullanıma hazır hale gelir.'
             }
-        ]
+        ],
+        whatsappMessage: 'Merhaba, koltuklarım için yerinde yıkama fiyatı öğrenebilir miyim? Fotoğraf gönderebilirim.'
     },
     {
         id: 'stor-perde-yikama',
@@ -127,7 +130,8 @@ export const services: Service[] = [
                 title: 'Montaj',
                 description: 'Temizlenen perdeleriniz aynı gün içinde yerine monte edilir.'
             }
-        ]
+        ],
+        whatsappMessage: 'Merhaba, stor perdelerimin söküm-takım dahil yıkama fiyatını öğrenebilir miyim?'
     },
     {
         id: 'yorgan-battaniye-yikama',
@@ -165,6 +169,7 @@ export const services: Service[] = [
                 title: 'Paketleme & Teslim',
                 description: 'Hijyenik şekilde paketlenerek 3–5 gün içinde adresinize teslim edilir.'
             }
-        ]
+        ],
+        whatsappMessage: 'Merhaba, yorgan ve battaniyelerim için hijyenik yıkama randevusu alabilir miyim?'
     }
 ];
