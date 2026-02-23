@@ -2,6 +2,50 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  async redirects() {
+    return [
+      {
+        source: "/hizmetlerimiz",
+        destination: "/hizmetler",
+        permanent: true,
+      },
+      {
+        source: "/hizmetlerimiz/:path*",
+        destination: "/hizmetler",
+        permanent: true,
+      },
+      {
+        source: "/hali-yikama",
+        destination: "/hizmetler/hali-yikama",
+        permanent: true,
+      },
+      {
+        source: "/hali-yikama/",
+        destination: "/hizmetler/hali-yikama",
+        permanent: true,
+      },
+      {
+        source: "/kurumsal/",
+        destination: "/kurumsal",
+        permanent: true,
+      },
+      {
+        source: "/iletisim/",
+        destination: "/iletisim",
+        permanent: true,
+      },
+      {
+        source: "/fiyat-listesi/",
+        destination: "/fiyat-listesi",
+        permanent: true,
+      },
+      {
+        source: "/blog/",
+        destination: "/blog",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

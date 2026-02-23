@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     title: 'Blog | Kurtköy Halı Yıkama',
     description: 'Halı yıkama, koltuk yıkama, perde yıkama hakkında bilgi ve ipuçları. Kurtköy, Pendik ve çevre bölgelerden halı yıkama rehberleri.',
     keywords: 'halı yıkama blog, kurtköy halı yıkama, pendik halı yıkama, halı temizliği ipuçları',
+    alternates: {
+        canonical: '/blog',
+    },
 };
 
 export default function BlogPage() {

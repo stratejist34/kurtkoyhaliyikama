@@ -30,8 +30,25 @@ const faqs = [
 export const FaqSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     return (
         <section className="py-24 bg-white border-t border-brand-navy/5">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className="max-w-4xl mx-auto px-4">
                 <Reveal>
                     <div className="text-center mb-16">
@@ -52,8 +69,8 @@ export const FaqSection = () => {
                             <div
                                 key={index}
                                 className={`rounded-2xl transition-all duration-300 border ${openIndex === index
-                                        ? 'bg-brand-mist border-brand-navy/10 shadow-sm'
-                                        : 'bg-white border-brand-navy/5 hover:border-brand-navy/10'
+                                    ? 'bg-brand-mist border-brand-navy/10 shadow-sm'
+                                    : 'bg-white border-brand-navy/5 hover:border-brand-navy/10'
                                     }`}
                             >
                                 <button

@@ -13,6 +13,8 @@ export async function generateStaticParams() {
     return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
+const siteUrl = "https://kurtkoyhaliyikama.net";
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params;
     const post = getBlogPost(slug);
@@ -22,6 +24,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title: `${post.title} | Kurtköy Halı Yıkama Blog`,
         description: post.excerpt,
+        alternates: {
+            canonical: `/blog/${slug}`,
+        },
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            url: `${siteUrl}/blog/${slug}`,
+            type: 'article',
+            publishedTime: post.date,
+            images: [
+                {
+                    url: post.image,
+                    width: 1200,
+                    height: 630,
+                    alt: post.title,
+                },
+            ],
+        },
     };
 }
 
@@ -37,8 +57,33 @@ export default async function BlogPostPage({ params }: PageProps) {
         .filter(p => p.slug !== post.slug && p.category === post.category)
         .slice(0, 3);
 
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "image": `${siteUrl}${post.image}`,
+        "datePublished": post.date,
+        "author": {
+            "@type": "Organization",
+            "name": "Kurtköy Halı Yıkama"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Kurtköy Halı Yıkama",
+            "logo": {
+                "@type": "ImageObject",
+                "url": `${siteUrl}/images/hero_studio_light_gray.png`
+            }
+        },
+        "description": post.excerpt
+    };
+
     return (
         <main className="min-h-screen bg-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
             {/* Hero */}
             <section className="relative pt-28 page-hero-bg page-hero-cut overflow-hidden">
                 <div className="max-w-3xl mx-auto px-4 relative z-10">
