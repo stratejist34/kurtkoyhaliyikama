@@ -117,6 +117,17 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Kurtköy Halı Yıkama",
+              "url": siteUrl,
+            })
+          }}
+        />
         <Header />
         {children}
         <Footer />
