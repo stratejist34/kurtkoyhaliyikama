@@ -129,33 +129,8 @@ export const CinematicServices = () => {
                         </Reveal>
                     ))}
                 </div>
-
-                {/* Angled Navy Break — Story Section */}
-                <div className="relative -mx-4 md:-mx-[calc((100vw-80rem)/2+1rem)]" style={{ margin: '0 calc(-50vw + 50%)' }}>
-                    <div
-                        className="relative bg-brand-navy text-white py-24 md:py-32 overflow-hidden"
-                        style={{ clipPath: 'polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%)' }}
-                    >
-
-
-                        {/* Subtle dot pattern */}
-                        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-
-
-                        <Reveal direction="up">
-                            <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-                                <p className="font-[family-name:var(--font-manrope)] text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}>
-                                    Her halının bir hikâyesi var.
-                                </p>
-                                <p className="text-xl md:text-2xl text-white/70 font-medium max-w-xl mx-auto leading-relaxed">
-                                    Biz o hikâyeyi bozmadan temizliyoruz.
-                                </p>
-                                <div className="mt-8 w-16 h-0.5 bg-brand-coral mx-auto rounded-full" />
-                            </div>
-                        </Reveal>
-                    </div>
-                </div>
             </div>
         </section>
+
     );
 };

@@ -45,7 +45,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
 }
 
-const WHATSAPP_URL = 'https://wa.me/905424025123?text=Merhaba%2C%20bilgi%20almak%20istiyorum.';
+function getWhatsAppUrl(postTitle: string) {
+    let message = 'Merhaba, halılarım için fiyat ve teslim alma tarihi verir misiniz?';
+
+    if (postTitle.includes('Halı Yıkama') && !postTitle.includes('Fiyatları') && !postTitle.includes('Tavsiye') && !postTitle.includes('Evcil') && !postTitle.includes('Antialerjik')) {
+        const regionMatch = postTitle.split(' Halı Yıkama')[0];
+        if (regionMatch && regionMatch.length < 25 && !regionMatch.includes('Neden') && !regionMatch.includes('Astım')) {
+            message = `${regionMatch} bölgesinden yazıyorum, halılarım için fiyat ve teslim alma tarihi verir misiniz?`;
+        } else {
+            message = `Merhaba, ${postTitle} sayfanızdan ulaşıyorum. Fiyat ve teslim alma tarihi hakkında bilgi alabilir miyim?`;
+        }
+    } else {
+        message = `Merhaba, "${postTitle}" yazınızı okudum. Hizmetleriniz hakkında detaylı bilgi ve fiyat almak istiyorum.`;
+    }
+
+    return `https://wa.me/905424025123?text=${encodeURIComponent(message)}`;
+}
 
 export default async function BlogPostPage({ params }: PageProps) {
     const { slug } = await params;
@@ -77,6 +92,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         },
         "description": post.excerpt
     };
+
+    const whatsappUrl = getWhatsAppUrl(post.title);
 
     return (
         <main className="min-h-screen bg-white">
@@ -130,7 +147,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <section className="py-12">
                 <div className="max-w-3xl mx-auto px-4">
                     <div className="blog-content">
-                        <BlogContent content={post.content} />
+                        <BlogContent content={post.content} whatsappUrl={whatsappUrl} />
                     </div>
 
                     {/* CTA Card */}
@@ -141,7 +158,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3">
                             <a
-                                href={WHATSAPP_URL}
+                                href={whatsappUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-coral text-white font-bold rounded-sm hover:bg-brand-coral/90 transition-all text-sm"
@@ -220,7 +237,7 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
     return parts;
 }
 
-function BlogContent({ content }: { content: string }) {
+function BlogContent({ content, whatsappUrl }: { content: string, whatsappUrl: string }) {
     const paragraphs = content.split('\n\n');
 
     return (
@@ -228,6 +245,26 @@ function BlogContent({ content }: { content: string }) {
             {paragraphs.map((para, i) => {
                 const trimmed = para.trim();
                 if (!trimmed) return null;
+
+                if (trimmed === '[CTA_BLOCK]') {
+                    return (
+                        <div key={i} className="my-10 bg-brand-mist/50 p-6 sm:p-8 rounded-2xl border-2 border-brand-coral/20 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+                            <div>
+                                <h4 className="text-xl font-bold text-brand-navy mb-2">Hemen Başlayalım</h4>
+                                <p className="text-brand-navy/70 text-sm m-0">Bugünkü planlama dolmadan bize ulaşın, indirimli fiyatlardan yararlanın.</p>
+                            </div>
+                            <a
+                                href={whatsappUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-brand-coral text-white font-bold rounded hover:bg-brand-coral/90 transition-all text-sm uppercase tracking-wide"
+                            >
+                                <MessageCircle size={18} />
+                                Fiyat Alın
+                            </a>
+                        </div>
+                    );
+                }
 
                 if (trimmed.startsWith('## ')) {
                     return <h2 key={i} className="text-2xl font-bold text-brand-navy mt-10 mb-4">{trimmed.replace('## ', '')}</h2>;

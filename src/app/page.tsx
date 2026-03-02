@@ -1,35 +1,26 @@
 import React from 'react';
 import { Hero } from '@/components/premium/blocks/Hero';
 import { CinematicServices } from '@/components/premium/blocks/CinematicServices';
-import { TensionSection } from '@/components/premium/blocks/TensionSection';
 import { ProcessSteps } from '@/components/premium/blocks/ProcessSteps';
-import { MarqueeBand } from '@/components/premium/blocks/MarqueeBand';
 import { InstantQuote } from '@/components/premium/blocks/InstantQuote';
-import { MainEvidence } from '@/components/premium/blocks/MainEvidence';
-import { MasterVoice } from '@/components/premium/blocks/MasterVoice';
+import { FaqSection } from '@/components/premium/blocks/FaqSection';
 import { CTAInvite } from '@/components/premium/blocks/CTAInvite';
 import { StickySceneEntry } from '@/components/premium/blocks/StickySceneEntry';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      {/* 1 — Hook: İlk izlenim + güvenli karar */}
+      {/* 1 — Hook: İlk izlenim + WA CTA */}
       <Hero />
-      {/* 2 — Yetkinlik: Her dokuma özenle işlenir */}
+      {/* 2 — Hizmet keşfi */}
       <CinematicServices />
-      {/* 3 — Korku: Ertelemek riski artırır */}
-      <TensionSection />
-      {/* 4 — Süreç: Kontrol hissi ver */}
+      {/* 3 — Süreç: Kontrol hissi ver */}
       <ProcessSteps />
-      {/* 4b — Hizmet bölgeleri akan şerit */}
-      <MarqueeBand />
-      {/* 5 — Fiyat: Güven sonrası dönüşüm */}
+      {/* 4 — Fiyat + CTA: Güven sonrası dönüşüm */}
       <InstantQuote />
-      {/* 6 — Kanıt: Durulama suyu berraklığı */}
-      <MainEvidence />
-      {/* 7 — Duygusal kapanış */}
-      <MasterVoice />
-      {/* 8 — Son dönüşüm */}
+      {/* 5 — İtiraz kırma + FAQ Schema */}
+      <FaqSection />
+      {/* 6 — Son dönüşüm CTA */}
       <CTAInvite />
       <StickySceneEntry />
     </main>

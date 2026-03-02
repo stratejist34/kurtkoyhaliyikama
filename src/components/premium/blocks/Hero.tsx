@@ -1,7 +1,7 @@
 ﻿'use client';
 
 import Image from 'next/image';
-import { Camera } from 'lucide-react';
+import { Camera, Phone } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
 import { useCountUp } from '@/hooks/useCountUp';
 import { useEffect, useRef } from 'react';
@@ -64,49 +64,55 @@ export const Hero = () => {
                 className="hero-stagger hero-stagger-1 relative z-30 ml-0 md:ml-[8%] lg:ml-[12%] max-w-[620px] p-8 md:p-10"
                 style={{
                     borderRadius: '24px',
-                    background: 'rgba(247, 250, 249, 0.50)',
-                    backdropFilter: 'blur(16px)',
-                    WebkitBackdropFilter: 'blur(16px)',
-                    border: '1px solid rgba(255, 255, 255, 0.45)',
-                    boxShadow: '0 10px 40px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6)',
+                    background: 'rgba(247, 250, 249, 0.82)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(255, 255, 255, 0.6)',
+                    boxShadow: '0 12px 48px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.7)',
                 }}
             >
-                {/* Mini trust tag */}
+                {/* Lokasyon + ücretsiz servis badge */}
                 <span
-                    className="hero-stagger hero-stagger-1 inline-block mb-5 text-sm"
-                    style={{ color: '#4F5B57' }}
+                    className="hero-stagger hero-stagger-1 inline-flex items-center gap-2 mb-5 px-3.5 py-1.5 rounded-full text-sm font-bold border"
+                    style={{ color: '#0A5C5F', background: '#E4F0F0', borderColor: '#B8D8D9' }}
                 >
-                    Kurtköy &amp; Pendik&apos;te ücretsiz alım–teslim
+                    <span className="w-2 h-2 rounded-full bg-[#0D7377] animate-pulse" />
+                    Kurtköy &amp; Pendik · Ücretsiz Alım–Teslim
                 </span>
 
                 {/* Headline */}
                 <h1
                     className="hero-stagger hero-stagger-2 font-[family-name:var(--font-manrope)] text-[28px] sm:text-[34px] md:text-[42px] mb-4"
                     style={{
-                        fontWeight: 600,
+                        fontWeight: 800,
                         lineHeight: 1.08,
                         letterSpacing: '-0.5px',
-                        color: '#20302D',
+                        color: '#1E2D24',
                     }}
                 >
-                    Halı yıkamak yalnızca temizlik değil,{' '}
-                    <span style={{ color: '#0D7377', fontWeight: 700 }}>
-                        eviniz için güvenli bir karardır.
+                    Halınızı Aldıralım.{' '}
+                    <span style={{ color: '#0A5C5F', fontWeight: 800 }}>
+                        Tertemiz Teslim Edelim.
                     </span>
                 </h1>
 
-                {/* Description */}
+                {/* Fiyat vurgusu */}
+                <div
+                    className="hero-stagger hero-stagger-2 mb-6 inline-flex items-baseline gap-2 px-4 py-2 rounded-xl"
+                    style={{ background: 'rgba(30,45,36,0.06)' }}
+                >
+                    <span className="text-xl sm:text-2xl font-extrabold tracking-tight" style={{ color: '#1E2D24' }}>450–600₺</span>
+                    <span className="text-sm font-medium" style={{ color: '#3A4A46' }}>/ 6m² halı</span>
+                    <span style={{ color: '#3A4A46' }} className="hidden sm:inline">·</span>
+                    <span className="text-sm font-medium hidden sm:inline" style={{ color: '#3A4A46' }}>3–5 günde teslim</span>
+                </div>
+
+                {/* Alt açıklama */}
                 <p
                     className="hero-stagger hero-stagger-2 mb-7"
-                    style={{
-                        fontSize: '16px',
-                        color: '#4F5B57',
-                        lineHeight: 1.6,
-                    }}
+                    style={{ fontSize: '15px', color: '#2C3E36', lineHeight: 1.6 }}
                 >
-                    Onayınız olmadan işlem yapılmaz.
-                    <br />
-                    Süreci fotoğrafla başlatır, net fiyatla ilerleriz.
+                    Fotoğraf gönderin, net fiyat öğrenin. Fiyat sabittir.
                 </p>
 
                 {/* CTA */}
@@ -116,32 +122,43 @@ export const Hero = () => {
                     rel="noopener noreferrer"
                     data-sticky-conflict
                     onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'hero' })}
-                    className="hero-stagger hero-stagger-3 inline-flex items-center gap-3 bg-brand-coral text-white font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98]"
+                    className="hero-stagger hero-stagger-3 w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-coral text-white font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98]"
                     style={{
-                        padding: '14px 28px',
+                        padding: '16px 36px',
                         borderRadius: '16px',
-                        boxShadow: '0 12px 30px rgba(192,57,43,0.3)',
-                        fontSize: '16px',
+                        boxShadow: '0 12px 30px rgba(192,57,43,0.35)',
+                        fontSize: '17px',
                     }}
                 >
-                    <Camera size={20} className="shrink-0" />
+                    <Camera size={22} className="shrink-0" />
                     Fotoğraf Gönder, Net Fiyat Al
+                </a>
+
+                {/* İkincil telefon linki */}
+                <a
+                    href="tel:+905424025123"
+                    onClick={() => trackEvent('telefon_aramasi', { konum: 'hero' })}
+                    className="hero-stagger hero-stagger-3 inline-flex items-center gap-2 mt-4 transition-colors hover:text-brand-coral underline underline-offset-2 decoration-1"
+                    style={{ fontSize: '15px', color: '#1E2D24' }}
+                >
+                    <Phone size={16} className="shrink-0" />
+                    veya arayın: 0542 402 51 23
                 </a>
 
                 {/* Trust proof */}
                 <div
-                    className="hero-stagger hero-stagger-4 flex flex-wrap items-center gap-5 mt-5"
-                    style={{ fontSize: '14px', color: '#4F5B57' }}
+                    className="hero-stagger hero-stagger-4 flex flex-wrap items-center gap-4 mt-6"
+                    style={{ fontSize: '14px', color: '#1E2D24' }}
                 >
                     <span className="flex items-center gap-1.5">
                         <span className="text-yellow-500">&#9733;</span>
                         <span ref={ratingRef} className="font-bold tabular-nums" />
-                        <span className="opacity-60">Google</span>
+                        <span className="opacity-80 font-medium">Google</span>
                     </span>
-                    <span className="w-px h-3 bg-black/10" />
-                    <span className="tabular-nums"><span ref={deliveriesRef} /> Teslim</span>
-                    <span className="w-px h-3 bg-black/10" />
-                    <span>Fiyat sabittir</span>
+                    <span className="w-px h-3.5 bg-brand-navy/25" />
+                    <span className="font-semibold tabular-nums"><span ref={deliveriesRef} /> Teslim</span>
+                    <span className="w-px h-3.5 bg-brand-navy/25" />
+                    <span className="font-semibold">Sabit Fiyat Garantisi</span>
                 </div>
             </div>
 

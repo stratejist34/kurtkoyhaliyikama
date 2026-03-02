@@ -117,7 +117,7 @@ export const CTAInvite = () => {
                             <a
                                 href="tel:+905424025123"
                                 onClick={() => trackEvent('telefon_aramasi', { konum: 'son_cta' })}
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 text-lg py-5 border border-brand-navy/20 text-brand-navy bg-transparent hover:bg-transparent hover:border-brand-navy hover:border-2 transition-all duration-150 rounded-sm"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 text-lg py-5 border-2 border-brand-navy/35 text-brand-navy bg-transparent hover:bg-transparent hover:border-brand-navy transition-all duration-150 rounded-sm"
                             >
                                 <Phone size={22} />
                                 HEMEN ARAYIN

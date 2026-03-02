@@ -1,3 +1,8 @@
+export interface ServiceFaq {
+    question: string;
+    answer: string;
+}
+
 export interface Service {
     id: string;
     slug: string;
@@ -13,6 +18,18 @@ export interface Service {
         description: string;
     }[];
     whatsappMessage: string;
+    pricingRange?: { min: number; max: number; unit: string };
+    faqTemplates?: { question: string; answer: string }[];
+    whyDifferent?: string;
+}
+
+/** Replaces {region} with actual region name in FAQ templates */
+export function getServiceFaqs(service: Service, regionName: string): ServiceFaq[] {
+    if (!service.faqTemplates) return [];
+    return service.faqTemplates.map(faq => ({
+        question: faq.question.replace(/{region}/g, regionName),
+        answer: faq.answer.replace(/{region}/g, regionName),
+    }));
 }
 
 export const services: Service[] = [
@@ -57,7 +74,31 @@ export const services: Service[] = [
                 description: 'Hijyenik şekilde paketlenen halılarınız ücretsiz servisimizle adresinize teslim edilir.'
             }
         ],
-        whatsappMessage: 'Merhaba, halılarım için fiyat ve en yakın alım günü bilgisini alabilir miyim?'
+        whatsappMessage: 'Merhaba, halılarım için fiyat ve en yakın alım günü bilgisini alabilir miyim?',
+        pricingRange: { min: 450, max: 600, unit: '6m²' },
+        whyDifferent: 'Sadece yüzeysel bir yıkama yapmıyoruz. {region} bölgesinden alınan halılarınız tesisimize geldiğinde önce kapalı odalarda tozdan arındırılır. Ardından %100 bitkisel enzim bazlı şampuanlarla, halının dokusuna zarar vermeden derinlemesine fırçalanır. Kapalı ve nem kontrollü odalarda kurutularak, egzoz ve dış ortam kirlerinden korunur. Sonuç: Evinize gerçek hijyen ve ferahlık gelir.',
+        faqTemplates: [
+            {
+                question: '{region} bölgesinden halı alımı ücretsiz mi?',
+                answer: 'Evet, {region} ve çevresindeki tüm mahallelerden halı alım ve teslimat hizmetimiz tamamen ücretsizdir. Fiyatlarımıza servis ücreti dahildir.'
+            },
+            {
+                question: 'Halılarım kaç günde teslim edilir?',
+                answer: 'Normal hava şartlarında {region} bölgesinden alınan halılarınız 3 ila 5 gün içerisinde yıkanıp, kapalı kurutma odalarımızda tamamen kurutulmuş olarak teslim edilir.'
+            },
+            {
+                question: 'Hangi şampuanları kullanıyorsunuz?',
+                answer: 'İnsan ve evcil hayvan sağlığına zararı olmayan, %100 bitkisel ve enzim bazlı profesyonel halı yıkama şampuanları kullanıyoruz. Ağartıcı veya zararlı kimyasallar kesinlikle kullanılmaz.'
+            },
+            {
+                question: 'Halılarım zarar görür mü?',
+                answer: 'Hayır. Halılarınız cinsine (makine, el dokuma, ipek vb.) göre ayrılır ve her halı türüne özel fırça baskısı ve devir hızı kullanılarak yıkanır.'
+            },
+            {
+                question: 'Ödemeyi nasıl yapabilirim?',
+                answer: 'Ödemenizi halılarınız temizlenip {region} adresinize teslim edildiğinde, kapıda nakit veya kredi kartı/havale ile yapabilirsiniz.'
+            }
+        ]
     },
     {
         id: 'koltuk-yikama',
@@ -96,7 +137,31 @@ export const services: Service[] = [
                 description: 'İşlem sonrası koltuklarınız yaklaşık 4 saat içinde kuruyarak kullanıma hazır hale gelir.'
             }
         ],
-        whatsappMessage: 'Merhaba, koltuklarım için yerinde yıkama fiyatı öğrenebilir miyim? Fotoğraf gönderebilirim.'
+        whatsappMessage: 'Merhaba, koltuklarım için yerinde yıkama fiyatı öğrenebilir miyim? Fotoğraf gönderebilirim.',
+        pricingRange: { min: 800, max: 1200, unit: 'Standart Takım' },
+        whyDifferent: '{region} bölgesindeki adresinize tam donanımlı araçlarımızla geliyoruz. Koltuklarınızı ıslatıp çürütmüyoruz; profesyonel köpüklü yıkama teknolojisi ile suyun süngere fazlasıyla inmesini engelliyoruz. Bu sayede hem kumaş yapısı korunuyor hem de koltuklarınız sadece 4-6 saat içinde tamamen kuruyarak kullanıma hazır hale geliyor.',
+        faqTemplates: [
+            {
+                question: '{region} bölgesine koltuk yıkama servisiniz var mı?',
+                answer: 'Evet, {region} bölgesindeki tüm adreslere yerinde koltuk yıkama hizmetimiz mevcuttur. Randevu saatinde adresinizde oluyoruz.'
+            },
+            {
+                question: 'Koltuk yıkama işlemi ne kadar sürer?',
+                answer: 'Standart bir koltuk takımının yıkanması kir durumuna bağlı olarak yaklaşık 1.5 - 2 saat sürmektedir. İşlem evinizde/iş yerinizde yapılır.'
+            },
+            {
+                question: 'Koltuklar yıkandıktan kaç saat sonra kurur?',
+                answer: 'Köpüklü sistem ve güçlü vakumlama sayesinde koltuklarınız oda sıcaklığında 4 ila 6 saat içerisinde tamamen kurumaktadır.'
+            },
+            {
+                question: 'Lekeler kesin olarak çıkar mı?',
+                answer: 'Koltuk kumaşınıza zarar vermeyecek sınırlar içerisindeki tüm inatçı lekelere (çay, kahve, tükenmez kalem vb.) özel solüsyonlarla müdahale ediyoruz. Çoğu leke başarıyla çıkarılmaktadır.'
+            },
+            {
+                question: 'Hangi koltuk kumaşlarını yıkıyorsunuz?',
+                answer: 'Tay tüyü, keten, pamuklu, nubuk ve şönil dahil değişen tüm koltuk kumaşı türlerine uygun yıkama programlarımız vardır.'
+            }
+        ]
     },
     {
         id: 'stor-perde-yikama',
@@ -131,7 +196,31 @@ export const services: Service[] = [
                 description: 'Temizlenen perdeleriniz aynı gün içinde yerine monte edilir.'
             }
         ],
-        whatsappMessage: 'Merhaba, stor perdelerimin söküm-takım dahil yıkama fiyatını öğrenebilir miyim?'
+        whatsappMessage: 'Merhaba, stor perdelerimin söküm-takım dahil yıkama fiyatını öğrenebilir miyim?',
+        pricingRange: { min: 100, max: 150, unit: 'm²' },
+        whyDifferent: 'Stor ve zebra perdelerin sökülüp takılması hassasiyet gerektirir. {region} adresinize gelen ekibimiz perdelerinizi zarar vermeden söker, tesisimizde ultrasonik temizlik standartlarında yıkar ve aynı gün içinde getirip montajını yapar. Kırışma, mekanizma bozulması veya potluk riski olmadan perdeleriniz ilk günkü canlılığına kavuşur.',
+        faqTemplates: [
+            {
+                question: '{region} adresinden perdeleri siz mi söküyorsunuz?',
+                answer: 'Evet, {region} bölgesindeki adresinizden perdelerinizi ücretsiz servisimizle uzman ekiplerimiz söküyor, yıkama sonrası tekrar montajını yapıp teslim ediyoruz.'
+            },
+            {
+                question: 'Zebra ve stor perdelerde kırışma olur mu?',
+                answer: 'Hayır, perdeleriniz formunu koruyacak özel sistemlerle düz bir şekilde yıkanır ve özel kurutma odalarında asılı şekilde kurutulur.'
+            },
+            {
+                question: 'Stor perde yıkama kaç gün sürer?',
+                answer: 'Stor ve zebra perdelerde genellikle aynı gün veya ertesi gün ekspres teslimat ve montaj yapabiliyoruz.'
+            },
+            {
+                question: 'Mekanizmalar suda bozulur mu?',
+                answer: 'Perdelerinizin tamamen kumaş kısımları yıkanmaktadır. Alüminyum kasa ve plastik zincir mekanizmaları özenle silinerek temizlenir, suda bekletilmez.'
+            },
+            {
+                question: 'Fiyatlandırma nasıl yapılıyor?',
+                answer: 'Stor perdelerinizde en az 3m² fiyatlandırılır. Eni ve boyu çarpılarak metrekare hesabı çıkarılır ve sürpriz bir ücret çıkmaz.'
+            }
+        ]
     },
     {
         id: 'yorgan-battaniye-yikama',
@@ -170,6 +259,30 @@ export const services: Service[] = [
                 description: 'Hijyenik şekilde paketlenerek 3–5 gün içinde adresinize teslim edilir.'
             }
         ],
-        whatsappMessage: 'Merhaba, yorgan ve battaniyelerim için hijyenik yıkama randevusu alabilir miyim?'
+        whatsappMessage: 'Merhaba, yorgan ve battaniyelerim için hijyenik yıkama randevusu alabilir miyim?',
+        pricingRange: { min: 300, max: 450, unit: 'Çift Kişilik' },
+        whyDifferent: '{region} bölgesinden alınan yorgan ve battaniyeleriniz endüstriyel boyuttaki özel yorgan yıkama makinelerinde tekli olarak yıkanır. Halılarla veya diğer ürünlerle asla aynı ortama girmez. İçerisindeki elyaf, yün veya pamuk dolgu malzemesi zarar görmeden kapalı odalarda kurutularak bakteri ve tozlardan %100 arındırılır.',
+        faqTemplates: [
+            {
+                question: '{region} servisiniz yorganları evden alıyor mu?',
+                answer: 'Evet, {region} sınırları içerisindeki tüm ev ve iş yerlerinden yorgan ile battaniyelerinizi ücretsiz alıp teslim ediyoruz.'
+            },
+            {
+                question: 'Yün yorgan yıkıyor musunuz?',
+                answer: 'Evet, yün yorganlarınız toplanma veya keçeleşme yapmaması için uygun sıcaklıkta, yünlü ürünlere özel şampuanlarla yıkanır.'
+            },
+            {
+                question: 'Yorganlar halılarla birlikte mi yıkanıyor?',
+                answer: 'Kesinlikle hayır. Yorgan ve battaniyeleriniz halılardan tamamen bağımsız, sadece bu işlem için üretilmiş sanayi tipi makinelerde yıkanır.'
+            },
+            {
+                question: 'Kaz tüyü yorgan yıkama yapıyor musunuz?',
+                answer: 'Kaz tüyü yorganlarınızın hassas yapısı göz önünde bulundurularak özel ısıda ve devirde deforme olmadan yıkanmasını sağlıyoruz.'
+            },
+            {
+                question: 'Kurutma işlemini nasıl yapıyorsunuz?',
+                answer: 'Yorganlarınız sıkma işleminden sonra, dışarıdaki toz ve egzozdan uzak, tamamen kapalı ve nem emici cihazların olduğu kurutma odalarımızda kurutulmaktadır.'
+            }
+        ]
     }
 ];

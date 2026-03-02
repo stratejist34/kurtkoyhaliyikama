@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { MessageCircle } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 import { useScrollReveal, useStaggerReveal } from '@/hooks/useScrollReveal';
 
 const steps = [
@@ -99,6 +101,20 @@ export const ProcessSteps = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Süreç sonrası CTA */}
+                <div className="text-center mt-12">
+                    <a
+                        href="https://wa.me/905424025123?text=Merhaba%2C%20hal%C4%B1%20y%C4%B1kama%20i%C3%A7in%20fiyat%20almak%20istiyorum."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackEvent('whatsapp_yazanlar', { konum: 'surec_sonu' })}
+                        className="inline-flex items-center gap-2 text-brand-navy/80 hover:text-brand-coral font-semibold text-sm transition-colors"
+                    >
+                        <MessageCircle size={16} />
+                        Süreci başlatmak için fotoğraf gönderin →
+                    </a>
                 </div>
             </div>
         </section>

@@ -35,7 +35,7 @@ export const InstantQuote = () => {
                         </span>
                     )}
 
-                    <p className="text-brand-navy/50 text-xs mb-2">
+                    <p className="text-brand-navy/65 text-xs mb-2">
                         Fiyat sürpriz değişmez.
                     </p>
                     <SlotMessage className="mb-3" />
@@ -52,13 +52,13 @@ export const InstantQuote = () => {
                             <Camera size={20} className="group-hover:rotate-12 transition-transform" />
                             <span>Fotoğraf Gönder, Net Fiyat Al</span>
                         </a>
-                        <p className="text-brand-navy/55 text-xs font-medium">
+                        <p className="text-brand-navy/65 text-xs font-medium">
                             Yazmak zorunda değilsiniz — fotoğrafı gönderin, biz fiyatı yazalım.
                         </p>
                         <a
                             href="tel:+905424025123"
                             onClick={() => trackEvent('telefon_aramasi', { konum: 'fiyat_kutusu' })}
-                            className="text-brand-navy/50 hover:text-brand-navy text-sm font-medium transition-colors mt-1"
+                            className="text-brand-navy/70 hover:text-brand-navy text-sm font-semibold transition-colors mt-1 underline underline-offset-2 decoration-1"
                         >
                             veya arayın: 0542 402 51 23
                         </a>
